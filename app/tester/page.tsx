@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaReact } from "react-icons/fa";
 
 export default function LandingPage() {
   const [count, setCount] = useState(0);
+  const [icons, setIcons] = useState<React.ReactNode[]>([]);
+
+  useEffect(() => {
+    if (count === 10) {
+      setIcons(prev => [...prev, <FaReact key={prev.length} size={20} color="#61DAFB" />]);
+    }
+  }, [count]);
 
   return (
     <div className="text-center font-sans p-5">
@@ -24,25 +31,17 @@ export default function LandingPage() {
         >
           Count: {count}
         </button>
-        {/* Move state declarations to top of component */}
-        {(() => {
-          const [icons, setIcons] = useState<React.ReactNode[]>([]);
 
-          React.useEffect(() => {
-            if (count === 10) {
-              setIcons(prev => [...prev, <FaReact key={prev.length} size={20} color="#61DAFB" />]);
-            }
-          }, [count]);
-          return icons.length > 0 && (
-            <div className="mt-4 flex gap-2 justify-center">
-              {icons.map((icon, index) => (
-                <div key={index} className="animate-bounce">
-                  {icon}
-                </div>
-              ))}
-            </div>
-          );
-        })()}
+        {/* Conditionally render icons when count reaches 10 */}
+        {icons.length > 0 && (
+          <div className="mt-4 flex gap-2 justify-center">
+            {icons.map((icon, index) => (
+              <div key={index} className="animate-bounce">
+                {icon}
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <footer className="mt-5 text-sm">
