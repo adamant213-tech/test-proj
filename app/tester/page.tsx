@@ -44,9 +44,7 @@ export default function LandingPage() {
           </div>
         )}
       </section>
-
       <footer className="mt-5 text-sm">
-        <p>AAAAAAAAAAAAAAAAAAAAA</p>
       </footer>
 
       <div className="mt-8 text-sm text-gray-600 border-t pt-4">
