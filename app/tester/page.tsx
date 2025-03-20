@@ -10,6 +10,7 @@ export default function LandingPage() {
   useEffect(() => {
     if (count === 10) {
       setIcons(prev => [...prev, <FaReact key={prev.length} size={20} color="#61DAFB" />]);
+      setCount(0)
     }
   }, [count]);
 
