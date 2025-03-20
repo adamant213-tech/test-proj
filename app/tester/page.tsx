@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useState } from "react";
 import { FaReact } from "react-icons/fa";
 import { CSSProperties } from "react";
 
 export default function LandingPage() {
-
+  const [count, setCount] = useState(0);
 
   return (
     <div style={styles.container}>
