@@ -12,7 +12,7 @@ export default function LandingPage() {
         <h1>
           WE DO BE TESTING <FaReact size={20} color="#61DAFB" />
         </h1>
-        <p>PARAGRAPH</p>
+        <p>There is no goal yet, just dumping ideas out on a page</p>
       </header>
 
       <section className="my-5 p-5 border border-gray-300 rounded-lg">
