@@ -2,61 +2,33 @@
 
 import React, { useState } from "react";
 import { FaReact } from "react-icons/fa";
-import { CSSProperties } from "react";
 
 export default function LandingPage() {
   const [count, setCount] = useState(0);
 
   return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1>WE DO BE TESTING <FaReact size={30} color="#61DAFB" /></h1>
+    <div className="text-center font-sans p-5">
+      <header className="bg-gray-800 text-white p-5 rounded-lg">
+        <h1>
+          WE DO BE TESTING <FaReact size={30} color="#61DAFB" />
+        </h1>
         <p>PARAGRAPH</p>
       </header>
 
-      <section style={styles.section}>
+      <section className="my-5 p-5 border border-gray-300 rounded-lg">
         <h2>Interactive Counter</h2>
         <p>Click the button to increase the count.</p>
-        <button style={styles.button} onClick={() => setCount(count + 1)}>
+        <button
+          className="bg-blue-400 border-none p-2 px-4 text-lg cursor-pointer rounded-md"
+          onClick={() => setCount(count + 1)}
+        >
           Count: {count}
         </button>
       </section>
 
-      <footer style={styles.footer}>
+      <footer className="mt-5 text-sm">
         <p>AAAAAAAAAAAAAAAAAAAAA</p>
       </footer>
     </div>
   );
 }
-
-const styles: Record<string, CSSProperties> = {
-  container: {
-    textAlign: "center",
-    fontFamily: "Arial, sans-serif",
-    padding: "20px",
-  },
-  header: {
-    backgroundColor: "#282c34",
-    color: "white",
-    padding: "20px",
-    borderRadius: "8px",
-  },
-  section: {
-    margin: "20px",
-    padding: "20px",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-  },
-  button: {
-    backgroundColor: "#61DAFB",
-    border: "none",
-    padding: "10px 20px",
-    fontSize: "16px",
-    cursor: "pointer",
-    borderRadius: "5px",
-  },
-  footer: {
-    marginTop: "20px",
-    fontSize: "14px",
-  },
-};
