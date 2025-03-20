@@ -8,7 +8,7 @@ export default function LandingPage() {
   const [icons, setIcons] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
-    if (count === 10) {
+    if (count >= 10) {
       setIcons(prev => [...prev, <FaReact key={prev.length} size={20} color="#61DAFB" />]);
       setCount(0)
     }
