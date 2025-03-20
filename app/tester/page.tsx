@@ -24,13 +24,31 @@ export default function LandingPage() {
         >
           Count: {count}
         </button>
+        {/* Move state declarations to top of component */}
+        {(() => {
+          const [icons, setIcons] = useState<React.ReactNode[]>([]);
+
+          React.useEffect(() => {
+            if (count === 10) {
+              setIcons(prev => [...prev, <FaReact key={prev.length} size={20} color="#61DAFB" />]);
+            }
+          }, [count]);
+          return icons.length > 0 && (
+            <div className="mt-4 flex gap-2 justify-center">
+              {icons.map((icon, index) => (
+                <div key={index} className="animate-bounce">
+                  {icon}
+                </div>
+              ))}
+            </div>
+          );
+        })()}
       </section>
 
       <footer className="mt-5 text-sm">
         <p>AAAAAAAAAAAAAAAAAAAAA</p>
       </footer>
 
-      {/* Wrap the second div in a parent div */}
       <div className="mt-8 text-sm text-gray-600 border-t pt-4">
         <p>© {new Date().getFullYear()} Test Project. All rights reserved.</p>
         <p className="mt-1">Last updated: {new Date().toLocaleDateString()}</p>
